@@ -1,0 +1,74 @@
+# Test Coverage Summary for Restic
+
+## Coverage by Package (Successful Tests Only)
+
+### High Coverage (>80%)
+- internal/backend/retry: 91.0%
+- internal/backend/mem: 89.9%
+- internal/backend/sema: 87.2%
+- internal/options: 87.8%
+- internal/repository/hashing: 91.7%
+- internal/textfile: 90.0%
+- internal/ui/restore: 89.9%
+- internal/ui/table: 90.8%
+- internal/ui/termstatus: 82.2%
+- internal/walker: 91.2%
+- internal/errors: 82.4%
+- internal/feature: 92.6%
+- internal/bloblru: 92.3%
+
+### Medium Coverage (50-80%)
+- internal/backend: 59.7%
+- internal/backend/cache: 66.2%
+- internal/backend/dryrun: 72.2%
+- internal/backend/layout: 68.6%
+- internal/backend/limiter: 80.0%
+- internal/backend/local: 76.6%
+- internal/backend/location: 70.7%
+- internal/backend/rclone: 57.8%
+- internal/repository/pack: 77.3%
+- internal/crypto: 56.8%
+- internal/filter: 64.0%
+- internal/ui/progress: 72.9%
+
+### Low Coverage (<50%)
+- internal/backend/azure: 5.4%
+- internal/backend/b2: 13.7%
+- internal/backend/rest: 37.8%
+- internal/backend/sftp: 17.5%
+- internal/backend/swift: 12.6%
+- internal/backend/util: 30.8%
+- internal/debug: 15.3%
+- internal/selfupdate: 15.4%
+- internal/terminal: 14.4%
+- internal/ui: 47.1%
+- internal/ui/backup: 46.8%
+
+### Packages with 0% Coverage (Testing utilities)
+- internal/backend/logger
+- internal/backend/mock
+- internal/backend/test
+- internal/test
+- internal/ui/signals
+
+## Test Failures
+- internal/fs: Some xattr-related tests failed
+
+## Packages That Failed to Build (Network Issues)
+- cmd/restic
+- internal/archiver
+- internal/backend/all
+- internal/backend/gs
+- internal/backend/s3
+- internal/checker
+- internal/data
+- internal/dump
+- internal/fuse
+- internal/global
+- internal/migrations
+- internal/repository
+- internal/repository/index
+- internal/restic
+- internal/restorer
+
+Note: The build failures were due to network connectivity issues downloading dependencies (google.golang.org/api and github.com/klauspost/compress), not code issues.

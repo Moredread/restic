@@ -1,0 +1,107 @@
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                    RESTIC TEST COVERAGE SUMMARY                              ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+📊 Coverage Distribution:
+
+High Coverage (>80%): ████████████████████████ 13 packages (36%)
+  ├─ internal/feature:             92.6% ██████████████████████████████████
+  ├─ internal/bloblru:             92.3% ██████████████████████████████████
+  ├─ internal/repository/hashing:  91.7% █████████████████████████████████
+  ├─ internal/walker:              91.2% █████████████████████████████████
+  ├─ internal/backend/retry:       91.0% █████████████████████████████████
+  ├─ internal/ui/table:            90.8% █████████████████████████████████
+  ├─ internal/textfile:            90.0% ████████████████████████████████
+  ├─ internal/backend/mem:         89.9% ████████████████████████████████
+  ├─ internal/ui/restore:          89.9% ████████████████████████████████
+  ├─ internal/options:             87.8% ███████████████████████████████
+  ├─ internal/backend/sema:        87.2% ███████████████████████████████
+  ├─ internal/errors:              82.4% ██████████████████████████████
+  └─ internal/ui/termstatus:       82.2% ██████████████████████████████
+
+Medium Coverage (50-80%): ████████████████ 12 packages (33%)
+  ├─ internal/backend/limiter:     80.0% ██████████████████████████████
+  ├─ internal/repository/pack:     77.3% ████████████████████████████
+  ├─ internal/backend/local:       76.6% ████████████████████████████
+  ├─ internal/ui/progress:         72.9% ███████████████████████████
+  ├─ internal/backend/dryrun:      72.2% ███████████████████████████
+  ├─ internal/backend/location:    70.7% ██████████████████████████
+  ├─ internal/backend/layout:      68.6% █████████████████████████
+  ├─ internal/backend/cache:       66.2% ████████████████████████
+  ├─ internal/filter:              64.0% ████████████████████████
+  ├─ internal/backend:             59.7% ██████████████████████
+  ├─ internal/backend/rclone:      57.8% █████████████████████
+  └─ internal/crypto:              56.8% █████████████████████
+
+Low Coverage (<50%): ████████ 11 packages (31%)
+  ├─ internal/ui:                  47.1% █████████████████
+  ├─ internal/ui/backup:           46.8% █████████████████
+  ├─ internal/backend/rest:        37.8% ██████████████
+  ├─ internal/backend/util:        30.8% ███████████
+  ├─ internal/backend/sftp:        17.5% ██████
+  ├─ internal/selfupdate:          15.4% █████
+  ├─ internal/debug:               15.3% █████
+  ├─ internal/terminal:            14.4% █████
+  ├─ internal/backend/b2:          13.7% ████
+  ├─ internal/backend/swift:       12.6% ████
+  └─ internal/backend/azure:        5.4% █
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                           CRITICAL ISSUES                                     ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+⚠️  Cloud Backend Coverage is Critically Low:
+    • Azure:  5.4% - NEEDS IMMEDIATE ATTENTION
+    • B2:    13.7% - NEEDS ATTENTION
+    • Swift: 12.6% - NEEDS ATTENTION
+    • GS:    Could not test (network issues)
+    • S3:    Could not test (network issues)
+
+⚠️  Security-Critical Package:
+    • Crypto: 56.8% - Should be >90% for security
+
+⚠️  Test Failures:
+    • internal/fs: xattr-related test failures
+
+⚠️  Cannot Test (Network Issues):
+    • cmd/restic - Main command package
+    • internal/repository - Core repository logic
+    • internal/archiver - Archive creation
+    • internal/checker - Repository checker
+    • internal/restorer - Restore functionality
+    • ... and 9 more packages
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                         RECOMMENDATIONS                                       ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+🎯 Immediate Actions:
+   1. Fix network connectivity to test core packages
+   2. Investigate and fix xattr test failures in internal/fs
+   3. Add tests for Azure backend (currently 5.4%)
+
+🎯 Short-term Goals:
+   1. Improve crypto package coverage to >90% (currently 56.8%)
+   2. Add comprehensive tests for cloud backends (B2, Swift, REST, SFTP)
+   3. Increase UI component coverage (backup, ui packages)
+
+🎯 Long-term Goals:
+   1. Target >80% coverage across all packages
+   2. Add integration tests for all backends
+   3. Enhance CI/CD with comprehensive cloud backend testing
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                         GENERATED FILES                                       ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+📄 COVERAGE_ANALYSIS.md - Detailed coverage analysis report
+📄 coverage_summary.txt - Quick coverage summary
+📄 scripts/coverage.sh - Script to generate coverage reports
+📄 coverage_visual_summary.txt - This file
+
+To run tests with coverage:
+  ./scripts/coverage.sh
+
+To view detailed analysis:
+  cat COVERAGE_ANALYSIS.md
+
