@@ -3,3 +3,10 @@
 /restic.exe
 /.vagrant
 /.vscode
+
+# Test and coverage artifacts
+coverage.out
+coverage_*.out
+test_output.txt
+coverage_reports/
+*.test
